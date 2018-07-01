@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom'
 
 /**
  * COMPONENT
@@ -8,14 +9,12 @@ import {connect} from 'react-redux'
 export const UserHome = ({ cities }) => {
 
   return (
-
     <div>
       {cities.length < 1
         ? null
-        : cities.map(city => <div key={city}><h3>{city}</h3></div>)
+        : cities.map(city => <div key={city}><Link to={`/cityWeather/${city}`}>{city}</Link></div>)
       }
     </div>
-
   )
 }
 
