@@ -5,22 +5,26 @@ import {connect} from 'react-redux'
 /**
  * COMPONENT
  */
-export const UserHome = props => {
-  const {email} = props
+export const UserHome = ({ cities }) => {
 
   return (
+
     <div>
-      <h3>Welcome, Home page</h3>
+      {cities.length < 1
+        ? null
+        : cities.map(city => <div key={city}><h3>{city}</h3></div>)
+      }
     </div>
+
   )
 }
 
 /**
  * CONTAINER
  */
-const mapState = state => {
+const mapState = ({ cities }) => {
   return {
-    email: state.user.email
+    cities
   }
 }
 
@@ -30,5 +34,5 @@ export default connect(mapState)(UserHome)
  * PROP TYPES
  */
 UserHome.propTypes = {
-  email: PropTypes.string
+  cities: PropTypes.array
 }
