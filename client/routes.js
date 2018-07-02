@@ -13,7 +13,7 @@ class Routes extends Component {
 
     return (
       <Switch>
-        <Route path='/cityWeather' component={CityWeather} />
+        <Route path='/cityWeather/:city' component={CityWeather} />
         <Route component={UserHome} />
       </Switch>
     )

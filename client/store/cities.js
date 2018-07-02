@@ -6,7 +6,7 @@ const GET_CITIES = 'GET_CITIES'
 /**
  * INITIAL STATE
  */
-const defaultCities = ['Boston', 'New York', 'Philadelphia', 'Baltimore', 'Washington DC']
+const defaultCities = ['Boston', 'New York', 'Philadelphia', 'Baltimore', 'Washington']
 
 /**
  * ACTION CREATORS
