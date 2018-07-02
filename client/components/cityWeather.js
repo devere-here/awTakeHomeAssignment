@@ -9,23 +9,25 @@ import { getWind, getPrecipitation, getMainWeather } from '../store'
  * COMPONENT
  */
 class CityWeather extends Component{
-  constructor(props){
-    super(props)
-    this.getData()
+
+  componentDidMount(){
+    this.makeApiCall()
   }
 
-  getData = () => {
+  makeApiCall = async () => {
 
-    let city = this.props.match.params.city
+    let city = this.props.match.params.city,
+      res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appId}`)
 
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${appId}`)
-    .then(data => {
-      console.log('the data is', data.data)
-      this.props.setWindData(data.data.wind)
-      this.props.setPrecipitationData(data.data.weather[0].main)
-      this.props.setMainWeatherData(data.data.main)
-    })
+    this.syncStore(res.data)
+  }
 
+  syncStore = (data) => {
+    let {setWindData, setPrecipitationData, setMainWeatherData} = this.props
+
+    setWindData(data.wind)
+    setPrecipitationData(data.weather[0].main)
+    setMainWeatherData(data.main)
   }
 
   render = () => (
@@ -55,15 +57,12 @@ const mapState = ({ wind, precipitation, mainWeather }) => {
 
 const mapDispatch = dispatch => ({
   setWindData: (windData) => {
-    console.log('in setWindData')
     dispatch(getWind(windData))
   },
   setPrecipitationData: (precipitation) => {
-    console.log('in setPrecipitationData')
     dispatch(getPrecipitation(precipitation))
   },
   setMainWeatherData: (mainWeather) => {
-    console.log('in mainWeather', mainWeather)
     dispatch(getMainWeather(mainWeather))
   }
 
