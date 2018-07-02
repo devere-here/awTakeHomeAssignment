@@ -3,5 +3,5 @@
  * This way, we can import all of our components from the same place, rather than
  * having to figure out which file they belong to!
  */
-export {default as UserHome} from './user-home'
+export {default as HomePage} from './homePage'
 export {default as CityWeather} from './cityWeather'
