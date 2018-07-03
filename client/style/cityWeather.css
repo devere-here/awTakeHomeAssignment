@@ -1,0 +1,33 @@
+#cityWeatherContainer{
+  height: 100vh;
+  width: 100vw;
+  background-color: #87CEEB;
+}
+
+
+#weatherBoard{
+  width: 76vw;
+  height: 57vh;
+  margin: 0 auto 0 auto;
+  border: 16px solid #DEB887;
+  border-radius: 50px;
+  background-color: #006400;
+  color: white;
+}
+
+.weatherFlexBox{
+  display: flex;
+  justify-content: space-between;
+  border: 2px red solid;
+}
+
+.weatherAttrDisplay{
+  width: 20%;
+  height: 40%;
+  border: 2px blue solid;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}

@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import appId from '../../secrets'
 import { getWind, getPrecipitation, getMainWeather } from '../store'
 
+import '../style/cityWeather.css'
+
 /**
  * COMPONENT
  */
@@ -67,17 +69,39 @@ class CityWeather extends Component{
     let city = this.props.match.params.city
 
     return (
-      <div>
-        <h1>{city}</h1>
-        <ul>
-          <li>Min Temperature: {`${this.state.minTemp} ${this.state.scale}`}</li>
-          <li>Max Temperature: {`${this.state.maxTemp} ${this.state.scale}`}</li>
-          <li>Current Temperature: {`${this.state.currentTemp} ${this.state.scale}`}</li>
-          <li>Pressure: {`${this.props.mainWeather.pressure} mb`}</li>
-          <li>Humidity: {`${this.props.mainWeather.humidity}%`}</li>
-          <li>Wind: {this.props.wind.speed} {this.state.windDirection}</li>
-        </ul>
-        <button type="button" onClick={this.convertTemperature}>Toggle Temperature Scale</button>
+      <div id="cityWeatherContainer">
+        <div id="weatherBoard">
+          <h1>{city}</h1>
+          <div className="weatherFlexBox">
+            <div className="weatherAttrDisplay">
+              <h2>Min Temperature</h2>
+              <h3>{`${this.state.minTemp} ${this.state.scale}`}</h3>
+            </div>
+            <div className="weatherAttrDisplay">
+              <h2>Current Temperature</h2>
+              <h3>{`${this.state.currentTemp} ${this.state.scale}`}</h3>
+            </div>
+            <div className="weatherAttrDisplay">
+              <h2>Max Temperature</h2>
+              <h3>{`${this.state.maxTemp} ${this.state.scale}`}</h3>
+            </div>
+          </div>
+          <div className="weatherFlexBox">
+            <div className="weatherAttrDisplay">
+              <h2>Pressure</h2>
+              <h3>{`${this.props.mainWeather.pressure} mb`}</h3>
+            </div>
+            <div className="weatherAttrDisplay">
+              <h2>Humidity</h2>
+              <h3>{`${this.props.mainWeather.humidity}%`}</h3>
+            </div>
+            <div className="weatherAttrDisplay">
+              <h2>Wind</h2>
+              <h3>{this.props.wind.speed} {this.state.windDirection}</h3>
+            </div>
+          </div>
+          <button type="button" onClick={this.convertTemperature}>Toggle Temperature Scale</button>
+        </div>
       </div>
     )
   }
