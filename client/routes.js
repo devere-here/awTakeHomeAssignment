@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {CityWeather, UserHome} from './components'
+import {CityWeather, HomePage} from './components'
 
 /**
  * COMPONENT
@@ -10,11 +10,10 @@ import {CityWeather, UserHome} from './components'
 class Routes extends Component {
 
   render() {
-
     return (
       <Switch>
         <Route path='/cityWeather/:city' component={CityWeather} />
-        <Route component={UserHome} />
+        <Route component={HomePage} />
       </Switch>
     )
   }

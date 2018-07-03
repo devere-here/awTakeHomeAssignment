@@ -1,0 +1,48 @@
+#cityWeatherContainer{
+  height: 100vh;
+  width: 100vw;
+  background-color: #87CEEB;
+}
+
+#weatherBoard{
+  width: 60vw;
+  height: 56vh;
+  margin: 0 auto 0 auto;
+  border: 16px solid #DEB887;
+  border-radius: 50px;
+  background-color: #006400;
+  color: white;
+  position: relative;
+  top: 20%;
+}
+
+.weatherFlexBox{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.weatherAttrDisplay{
+  width: 20%;
+  height: 40%;
+  text-align: center;
+}
+
+#cityHeader{
+  text-align: center;
+  font-size: 40px;
+}
+
+.buttonFlexBox{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+button{
+  background-color: white;
+  border: 5px solid #DEB887;
+  border-radius: 20px;
+  font-size: 25px;
+}
+
