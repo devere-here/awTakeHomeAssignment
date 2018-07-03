@@ -1,7 +1,7 @@
 {
-  "name": "boilermaker",
+  "name": "five_city_weather_app",
   "version": "1.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "",
   "engines": {
     "node": ">= 7.0.0"
   },
@@ -32,8 +32,8 @@
       "git add"
     ]
   },
-  "author": "Fullstack Academy of Code",
-  "license": "MIT",
+  "author": "Steven DeVere",
+  "license": "",
   "dependencies": {
     "axios": "^0.15.3",
     "body-parser": "^1.16.1",

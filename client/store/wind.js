@@ -12,7 +12,6 @@ const defaultWind = {
   "gust": 10
 }
 
-
 /**
  * ACTION CREATORS
  */

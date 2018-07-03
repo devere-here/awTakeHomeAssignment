@@ -1,9 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
 import '../style/mainPage.css'
-import jQuery from 'jquery'
 
 /**
  * COMPONENT
@@ -21,9 +19,8 @@ export const HomePage = ({ cities }) => {
       <div id="cityCircleContainer">
         {cities.length < 1
           ? null
-          : cities.map(city => <div key={city} className={`cityCircle ${city.replace(' ', '')}`}><Link to={`/cityWeather/${city}`}>{city}</Link></div>)
+          : cities.map(city => <Link key={city} className={city.replace(' ', '')} to={`/cityWeather/${city}`}><div className="cityCircle">{city}</div></Link>)
         }
-
         <div id="backgroundImage" />
       </div>
     </div>
@@ -40,10 +37,3 @@ const mapState = ({ cities }) => {
 }
 
 export default connect(mapState)(HomePage)
-
-/**
- * PROP TYPES
- */
-HomePage.propTypes = {
-  cities: PropTypes.array
-}
