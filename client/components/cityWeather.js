@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import appId from '../../secrets'
+import { Link } from 'react-router-dom'
 import { getWind, getPrecipitation, getMainWeather } from '../store'
 
 import '../style/cityWeather.css'
@@ -71,36 +72,39 @@ class CityWeather extends Component{
     return (
       <div id="cityWeatherContainer">
         <div id="weatherBoard">
-          <h1>{city}</h1>
+          <h1 id="cityHeader">{city}</h1>
           <div className="weatherFlexBox">
             <div className="weatherAttrDisplay">
               <h2>Min Temperature</h2>
-              <h3>{`${this.state.minTemp} ${this.state.scale}`}</h3>
+              <h1>{`${this.state.minTemp} ${this.state.scale}`}</h1>
             </div>
             <div className="weatherAttrDisplay">
               <h2>Current Temperature</h2>
-              <h3>{`${this.state.currentTemp} ${this.state.scale}`}</h3>
+              <h1>{`${this.state.currentTemp} ${this.state.scale}`}</h1>
             </div>
             <div className="weatherAttrDisplay">
               <h2>Max Temperature</h2>
-              <h3>{`${this.state.maxTemp} ${this.state.scale}`}</h3>
+              <h1>{`${this.state.maxTemp} ${this.state.scale}`}</h1>
             </div>
           </div>
           <div className="weatherFlexBox">
             <div className="weatherAttrDisplay">
               <h2>Pressure</h2>
-              <h3>{`${this.props.mainWeather.pressure} mb`}</h3>
+              <h1>{`${this.props.mainWeather.pressure} mb`}</h1>
             </div>
             <div className="weatherAttrDisplay">
               <h2>Humidity</h2>
-              <h3>{`${this.props.mainWeather.humidity}%`}</h3>
+              <h1>{`${this.props.mainWeather.humidity}%`}</h1>
             </div>
             <div className="weatherAttrDisplay">
               <h2>Wind</h2>
-              <h3>{this.props.wind.speed} {this.state.windDirection}</h3>
+              <h1>{this.props.wind.speed} {this.state.windDirection}</h1>
             </div>
           </div>
-          <button type="button" onClick={this.convertTemperature}>Toggle Temperature Scale</button>
+          <div className="buttonFlexBox">
+            <button type="button" onClick={this.convertTemperature}>Toggle Temperature Scale</button>
+            <button type="button"><Link to="/">Return to Home Screen</Link></button>
+          </div>
         </div>
       </div>
     )
