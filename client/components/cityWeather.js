@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import appId from '../../secrets'
+// import appId from '../../secrets'
 import { getWind, getPrecipitation, getMainWeather } from '../store'
 import WeatherBoard from './weatherBoard'
 
@@ -25,7 +25,7 @@ class CityWeather extends Component{
   makeApiCall = async () => {
 
     let city = this.props.match.params.city,
-      res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${appId}`)
+      res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=9fd307413621f54b96539763a5f20d61`)
 
     this.syncStore(res.data)
     this.setState({

@@ -6,14 +6,15 @@
 
 #weatherBoard{
   width: 60vw;
-  height: 56vh;
+  height: 70vh;
   margin: 0 auto 0 auto;
   border: 16px solid #DEB887;
   border-radius: 50px;
   background-color: #006400;
   color: white;
   position: relative;
-  top: 20%;
+  top: 15%;
+  overflow: scroll;
 }
 
 #cityHeader{
